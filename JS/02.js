@@ -181,6 +181,41 @@ generoUsuario= "M"
 estatusRelacionSentimental=null
 console.log(`El usuario: ${nombreUsuario} se ha logeado exitosamente, al tener acceso a su informacion de perfil podemos deducir que es del genero ${generoUsuario} y que su estatus sentimental es: ${estatusRelacionSentimental} y su ultimo post fue: ${fechaUltimoPost}`)
 
+//Comparando Null vs Undefinied
+//Si bien UNDEFINIED y NuLL tienen el mismo valor , no tienen el mismo tipo de dato
+//Equidad: tiene el mismo valor y diferente tipo de dato
+//identidad: mismo valor y mismo tipo
+console.log("Cmparacion de la equidad entre Undefinied y Null")
+console.log(
+    (fechaUltimoPost == estatusRelacionSentimental)?
+    "Ambas variables tienen el mismo valor" :
+    "las variables no tiene  el mismo valor"
+ );
+console.log("Cmparacion de la identidad entre Undefinied y Null")
+console.log(
+    (fechaUltimoPost === estatusRelacionSentimental)?
+    "Ambas variables tienen el mismo valor" :
+    "las variables no tiene  el mismo valor"
+ );
+//8. FUNCTION (Funciones)
+console.warn("---fUNCIONES ---")
+//Declaramos una funcion que nos permite recibir un parametro, en este caso el nombre de la persona a saludar, y le enviamos un saludo, esta funcion la asignamos a unna constante
+const saludar = function(nombre){return`Hola, ${nombre}!`}
+//Invocamos a la funcion declarada
+console.log(saludar('Adrian'))
+//Y que tipo de dato tiene esta constante
+console.log(`El tipo de dastp de la constante saludar es: ${typeof(saludar)}`)
+//Equidad: tiene el mismo valor y diferente tipo de dato
+//identidad: mismo valor y mismo tipo
+
 /*const numero = "30"
  const numero2 = 30
  console.log(typeof numero) console.log(typeof numero2)*/
+
+ console.log(typeof numero2)
+ //Opreador Ternario : El operador ternario
+ /**El operador es la version simplificada de una condicional
+  * tiene tres partes
+  * condicion
+  * expresion_si_verdadero
+  * expresion_si_falsa */ 
