@@ -1,0 +1,62 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.58%;
+}
+ body{
+    font-size: 1.6rem;
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(245, 163, 86);
+ }
+ *, *:before, *:after{
+    box-sizing: inherit;
+ }
+ header{
+    padding: 3rem 0; 
+ }
+ /*Ajusta el margen interno*/
+ /*Usar medidas relativas en vez de pixeles*/
+ /* El paddig separa el contenido del borde*/
+ header h1{
+    text-align: center;
+    color: rgb(50, 87, 104);
+    font-size: 6rem;
+ }
+ header p{
+    color: bisque;
+    text-align: center;
+    font-size: 3.2rem;
+ }
+ header p a{
+    text-decoration: none;
+    color: red;
+ }
+.DOM {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.DOM h2{
+    color: #fff;
+    text-align: center;
+}
+.DOM nav a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.DOM p {
+    color: blue;
+    font-size: 20px;
+}
+.DOM #formulario {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.DOM #formulario input {
+    display: block;
+    width: 100%;
+    border: none;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
