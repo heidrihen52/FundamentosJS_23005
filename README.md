@@ -12,7 +12,7 @@ Previo a iniciar el desarrollo de software para web usando el framework de Node 
 |2.|Inicialización del Proyecto de Fundamentos e JS|5|Finalizada|
 |3.|Declaración de Variables(Undefinied/Boolean/number)|10|Finalizada|
 |4.|Declaración de Variables(Continuación)|6|Finalizada|
-|5.|Introducción a Objetos||Activa|
+|5.|Introducción a Objetos|19|Activa|
 ## Autor
 Adrian Pérez Jiménez
 Unidad 1
