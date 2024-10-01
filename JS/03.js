@@ -29,6 +29,7 @@ console.log(typeof(Producto_SKU));
 //Ahora lo declaramos como un OBjeto
 console.log("%c2.- Objeto", style_console)
 let Producto = {
+    ID:225,
     Nombre: "Laptop HP",
     Marca: "Hewlett Packard",
     Modelo: "DV 3000",
@@ -65,6 +66,7 @@ let Producto2 = {
     Categoria:["Electronicos","Entretenimiento","Casa"]
 }
 let Comprador= {
+    ID:222,
     Clave: 3324,
     Nombre: "Adrian",
     Apellidos: "Perez Jimenez",
@@ -74,6 +76,7 @@ let Comprador= {
     SaldoActual: 199992.23
 }
 let Pedido = {
+    ID:2233,
     Producto_Clave:612,
     Comprador_Clave: 3324,
     Cantidad: 2,
@@ -185,7 +188,44 @@ console.log("Los datos del cliente y sus habitos de comprea son")
 console.table(datosClientePromociones)
 //Operaciones sobre objetos
 //Union de Objetos
-console.log("%c10.- ",style_console)
+console.log("%c10.- Unión de objetos  usuando el metodo de asignación (ASSIGN) ",style_console)
+console.log("Imprimimos la estructura y valores del Objeto PRODUCTO")
+console.table(Producto)
+console.log("Imprimimosd la estructura y valores del Objeto PEDIDO")
+console.table(Pedido)
+//Suponiendo que el usuarios ya realizó el pago el pedido se convertirá en una VENTA que requiere información de ambos objetos
+//let Producto3={...Producto3}
+const Venta = Object.assign(Producto, Pedido) //Recomendadcion: no usar assign si las propiedades del objeto son iguales, ya que se puede propiciar la perdida de datos
+console.log("Consultamos este nuevo objeto VENTA")
+console.table(Venta)
+//Union de objetos Utilizando SPREAD OPERATOR para evitar la perdida de informacion con objetos que comparten el mismo nombre en sus propiiedades
+console.log("%c11.- Unión de objetos  usuando el SPREAD OPERATOR (...)",style_console)
+console.table(Producto)
+console.table(Comprador)
+console.table(Pedido)
+Producto.ID=100;
+let Venta2 = {
+    producto:{...Producto},
+    comprador:{...Comprador},
+    pedido:{...Pedido}
+}
+console.log("Fusionamos los 3 objetos en uno nuevo, sin perdida de información")
+console.log(Venta2)
+console.table(Venta2)
+//Vamos a verificar el estatus de mutabilidad de los objetos
+console.log("Vamos a verificar el estatus de mutabilidad del objeto Pedido")
+console.log(`Esta el objeto de Pedido Congelado? : ${Object.isFrozen(Pedido)}`)
+console.log(`Esta el objeto de Pedido Congelado? : ${Object.isSealed(Pedido)}`)
+console.log("Vamos a verificar el estatus de mutabilidad del objeto Comprador")
+console.log(`Esta el objeto de Pedido Congelado? : ${Object.isFrozen(Comprador)}`)
+console.log(`Esta el objeto de Pedido Congelado? : ${Object.isSealed(Comprador)}`)
+console.log("Vamos a verificar el estatus de mutabilidad del objeto Producto")
+console.log(`Esta el objeto de Pedido Congelado? : ${Object.isFrozen(Producto)}`)
+console.log(`Esta el objeto de Pedido Congelado? : ${Object.isSealed(Producto)}`)
+//Modificamos ña estructura de producto, agregando una nueva propiedad
+Producto['isLegacy']=true; //Productos que van ganando precio,(Son productos que ya no se producen)
+console.log(Producto)
+console.table(Venta2)
 /////////////////////////////////////////////////////-co
 const producto = { //Asignacion de atributos
     nombre: "Tablet 9\"",
