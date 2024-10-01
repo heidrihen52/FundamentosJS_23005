@@ -98,7 +98,95 @@ console.log(`Por cuestiones de inflacion el costp del producto ha cambiado y deb
 Producto2,Precio=6915.50;
 console.log(`Los nuevos valores del Producto son:  `)
 console.log(Producto2);
-/////////////////////////////////////////////////////
+//¿Puedo cambiar no solo el vaor, si no el tipo de dadto de un objeto de javascrip
+console.log(`-------------------------------`)
+console.log(`El objeto actualmente tiene los siguientes valores`)
+let tipoDisponibilidad = typeof(Producto2.Disponibilidad)
+console.log(`El tipo de dato de la disponibilidad es: ${tipoDisponibilidad}`)
+console.log(JSON.stringify(Producto2,null,2));
+Producto2.Disponibilidad = "si"
+let nuevoTipoDisponibilidad  = typeof(Producto2.Disponibilidad)
+console.log(Producto2)
+console.log(`El nuevo tipo de dato de la disponibilidad es: ${nuevoTipoDisponibilidad}`)
+//si
+//Agregar nuevas propiedades a un objeto existente
+console.log("%c5.- Agregacion de Propiedades de un Objeto",style_console)
+console.log("Objeto antes de sre modificado")
+console.log(JSON.stringify(Comprador))
+// Agregando propiedades
+Comprador['Direccion'] = "AV 05 de Mayo #40, interior 4A, Poza Rica de Hidalgo, Veracruz, Mexico"
+Comprador['Tipo'] = "Premium"
+Comprador['Estatus'] = "Inactivo"
+Comprador['TotalCompras']="20000.00"
+console.log("Objeto despues de ser modificado ")
+console.table(Comprador)
+//Eliminar las propiedades de un objeto
+console.log("%c6.- Eliminacion de propiedades de un Objeto",style_console)
+console.log("Objeo antes de ser eliminado")
+console.table(Pedido)
+delete Pedido['TipoPago'];
+console.log("Objeto despues de ser modificado: ")
+console.table(Pedido)
+console.log("%c7.- Metodos para controlar la mutabilidad de los Objetos, Congelacion(FREEZE)",style_console)
+//Si deseamos no permitir que los objetos sean modificados en su estructura, ni en valor, utilizamos  el metodo freeze (congelar)
+console.log(`La estructura actual de objeto Compradr es: `)
+console.table(Comprador)
+Object.freeze(Comprador)
+//Intentamos agregar, modificar elimiar los valores de sus propiedades
+Comprador.FechaUltimaCompra = "07/02/2024"
+Comprador.Direccion= "Calle Palma #300, Colonia Chapultepec, Poza Rica de Hidalgo, Veracruz, Mexico"
+delete Comprador.Tipo
+console.log(`Verificamos si se realizaron los cambios en el Objeto COMPRADOR`)
+console.table(Comprador)
+console.log("%c8.- Metodos para controlar la mutabilidad de los Objetos, SEAL(Sellado)",style_console)
+//Sin embargo, en el caso que debamos poder modificar los valores de las propiedades del objeto, pero no nu estructura, ustilizamos seal
+Object.seal(Pedido)
+//Intentamos modificar su estructura
+Pedido['FechaPedidio']="20/05/2024"
+delete Pedido['Cantidad']
+console.log(`Verificamos si se realizaron los cambios en el OBJETO Pedido:`)
+console.table(Pedido)
+//Ahora intemtamos modificar el valor de las propiedades
+Pedido.Cantidad= 66
+console.log(`Verificamos si se realizaron los cambiios en el Objeto Pedido`)
+console.table(Pedido) 
+//Desectructuracion de 2 o mas obetos
+console.log("%c9.- Desestructuración de 2 o mas Objetos",style_console)
+let{Precio:precioProducto, SKU: productoSKU, Marca: productoMarca}=Producto
+let{Correo: clienteCorreo, PaisOrigen: clientePais, SaldoActual:clienteSaldo, Tipo:clienteTipo}=Comprador
+//Transformar valores cuantitativo en cualitativos
+if(precioProducto > "2000")
+    precioProducto="Caro"
+else
+    precioProducto="Barato"
+if(clienteSaldo>0)
+    clienteSaldo="Saldo a Favor "
+else if(clienteSaldo<0)
+    clienteSaldo="Saldo en Contra"
+else
+    clienteSaldo="Sin Adeudo"
+//Transformar valores cualitativos en cuantitativos
+let clineteNivel;
+if(clienteTipo=="Premium")
+    clineteNivel=1
+if(clienteTipo=="Freemium")
+    clineteNivel=2
+if(clienteTipo=="No Identificado")
+    clineteNivel=3
+//Clasificamos al cliente por su pais de origen
+if(clientePais == "Mexico")
+    clientePais="Nacional"
+else
+    clientePais="Extranjero"
+//OLE - Object Literal Enhancement
+let datosClientePromociones= {clienteCorreo,clientePais,clineteNivel,clienteSaldo,productoMarca,Producto_Precio}
+//El nuevo objeto 
+console.log("Los datos del cliente y sus habitos de comprea son")
+console.table(datosClientePromociones)
+//Operaciones sobre objetos
+//Union de Objetos
+console.log("%c10.- ",style_console)
+/////////////////////////////////////////////////////-co
 const producto = { //Asignacion de atributos
     nombre: "Tablet 9\"",
     marca: "Mac",
