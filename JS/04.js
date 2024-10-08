@@ -240,7 +240,7 @@ function filtraPrimeros5(arregloEstudiantes)
 }
 
 //Filtardo de datos
-console.log("%c11.- FIltrado de Elementos dentro de un arreglo utilizando el metodo MAP, en el  que necesitamos transformarlo", style_console)
+console.log("%c12.- FIltrado de Elementos dentro de un arreglo utilizando el metodo MAP, en el  que necesitamos transformarlo", style_console)
 console.log("Imprimimos los elementos actuales de signosZodiacales;")
 console.table(signosZodiacales)
 //Que podemos hacer  si necesitamos el mismo arreglo pero ahora con todos sus elementos con letras MAYUSCULAS
