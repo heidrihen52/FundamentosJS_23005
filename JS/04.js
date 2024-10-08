@@ -244,7 +244,7 @@ console.log("%c11.- FIltrado de Elementos dentro de un arreglo utilizando el met
 console.log("Imprimimos los elementos actuales de signosZodiacales;")
 console.table(signosZodiacales)
 //Que podemos hacer  si necesitamos el mismo arreglo pero ahora con todos sus elementos con letras MAYUSCULAS
-console.table(signosZodiacales,map(signosZodiacal=> signosZodiacal.toUpperCase()))
+console.table(signosZodiacales.map(signosZodiacal=> signosZodiacal.toUpperCase()))
 //Reduccion de elemntos de un arreglo, se usa cuando debemos cacer operaciones matematicas o cuantitativas a un  arreglo, como obtener totales, la ide es reducir la lista a un  valor mas simplificado
 const costosListaCompras=[15,52.50,16.90,32.50,28,105,45.2,94.10]
 //como podemos calcular el total de una lista de costos de un carrito de compras
