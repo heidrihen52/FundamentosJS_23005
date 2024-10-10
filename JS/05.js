@@ -118,3 +118,158 @@ let asignaGeneracion = (anioNacimiento)=>{
 }
 
 console.log(`Dado que que nació en el año 2005 soy de la generacion: ${asignaGeneracion(2005)}`)
+
+console.log("%c4.- Manejo de Excepciones (TRY/CATCH) ",style_console)
+//En algunas ocasiones existiran errores que no son culpa del programa, si no del usuario, la red, el so o incluyso de un middleware, pero sin dudad  debemos controlar para evitar las fallas de ejecucion
+
+console.log("Intentamos divivir: 0/10, el resultado es: ")
+try{ //intenta
+    let result=0/10;
+    console.log(result)
+}
+catch(error){
+    console.log("Ocurrio un error: "+error.message)
+}
+console.log("Intentamos divivir: 10/0, el resultado es: ")
+try{ //intenta
+    let result=10/0;
+    console.log(result)
+}
+catch(error){
+    console.log("Ocurrio un error: "+error.message)
+}
+console.log("Intentamos dividir : a/10, elresultado es: ")
+try{ //intenta
+    let result="a"/10; //dividir una variable no definida entre 0
+    console.log(result)
+}
+catch(error){
+    console.log("Ocurrio un error: "+error.message)
+}
+console.log("Intentamos dividir : a/10, elresultado es: ")
+try{ //intenta
+    let result=a/10; //dividir una variable no definida entre 0
+    console.log(result)
+}
+catch(error){
+    console.log("Ocurrio un error: "+error.message)
+}
+
+console.log("Intentamos dividir el valor de la variable x/entre el valor de la variable y, elresultado es: ")
+try{ //intenta
+    let x=8, y=2, result = x/y //dividir una variable no definida entre 0
+    console.log(result)
+}
+catch(error){
+    console.log("Ocurrio un error: "+error.message)
+}
+
+
+
+console.log("%c5.- Control de Ciclos (BREAK/CONTINUA) ",style_console)
+//En alugnas ocasdiones sera importamre detner un ciclo
+console.log("Va,os a constar del 1 al 10....")
+for(let num=1; num<=10; num++)
+    console.log(num)
+
+console.log("Ahora necesitamos que si llegasñ añ 7 pares de contar...")
+console.log("Suponiendo que solo por hoy es de mala suerte...")
+for(let num=1; num<=10; num++)
+    if (num==7) {
+        break;
+    } else {
+        console.log(num)
+    }
+    
+console.log("Ahora necesitamso que si llegas al numero 7 te lo saltes y continues con la sucesion")
+for(num=1;num<=10;num ++)
+{
+    if (num==7) {
+        continue
+    }
+    console.log(num)
+}
+
+console.log("%c6.- Ciclo iterativo - (FOR)",style_console)
+//Recorre de manera iteraticva (I) de incremental o decremental
+console.log("Los duias de la semana son en orden ascendente son:")
+let dias = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+for(let i=0; i<dias.length;i++)
+    console.log(dias[i])
+
+console.log("Ahora vamos a imprimir los meses en orden descendente")
+let meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+for (let i=meses.length - 1; i>=0;i--)
+    console.log(meses[i])
+
+console.log("%c7.- Ciclo de condicionales WHILE",style_console)
+//Estos ciclos (BUCLE) dependen de una condicion para continuar ejecutandose
+let finDeSemana = false;
+let mensaje = " ";
+let j=0;
+
+while (j < dias.length) {
+    switch (j) {
+        case 0:
+            finDeSemana=true
+            mensaje="Descansitooo"
+            break;
+
+        case 1:
+            finDeSemana=false;
+            mensaje="San Platano"
+            break;
+        case 2:
+            finDeSemana=false;
+            mensaje="Chambawork"
+            break;
+        case 3:
+            finDeSemana=false;
+            mensaje="Flojeritis"
+            break;
+        case 4:
+            finDeSemana=false;
+            mensaje="Casi fiiinnnn"
+            break;
+        case 5:
+            finDeSemana=false;
+            mensaje="Vierneeeeesssss👍"
+            break;
+        case 6:
+            finDeSemana=true;
+            mensaje="AWEBOOOO!"
+            break;
+        
+    }
+    if (!finDeSemana) {
+        console.log(`Dia: ${dias[j]}`)
+        console.log(`Mensaje del dia ${mensaje}`)
+    }
+    j++
+}
+
+console.log("%c8.- Ciclo de condicionales, que se ejecuta al menos una vez - (DO WHILE)",style_console)
+//Simulamos una lista de episodios de una temporada
+let episodios = [
+    "Episodio 1: Fire",
+    "Episodio 2: Lazarus",
+    "Episodio 3: E.B.E",
+    "Episodio 4: Born Again",
+    "Episodio 5: Roland"
+];
+
+let indice =0;
+let continuarViendo = true;//Esta variable simula la decision del usuario de continuar viendo
+
+do {
+    console.log(`Reproduciendo ${episodios[indice]}`)
+    //Simulamos la reproduccion del episodio
+    indice++;
+    //Simulamos una pregunta al usuario si  desea seguir viendo
+    if (indice < episodios.length) {
+        continuarViendo = confirm("¿Deseas continuar con el siguiente epuisodio?")
+    } else {
+        continuarViendo=false;//Cuando se acab la lista de episodios
+    }
+} while (continuarViendo && indice < episodios.length);
+console.log("Fin de la reproduccion")
