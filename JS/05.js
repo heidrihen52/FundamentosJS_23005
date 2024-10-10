@@ -293,3 +293,50 @@ try {
     console.log("Ocurrio un error:"+error.mensaje)
 }
 
+
+
+console.log("%c10.-  Ciclos para recorrer las propiedades de elementos finitos- (For-In",style_console)
+//Usando for..l.in para recorrer cada serio
+for(let i in seriesTrending){
+    console.log(`Serie ${parseInt(i)+1}`)
+    for(let propiedad in seriesTrending[i]){
+        console.log(`${propiedad}: ${seriesTrending[i][propiedad]}}`)
+    }
+    console.log('-----------------')
+}
+
+console.log("%c11.- Ciclos ininterrrumpidos para cada uno de los elemntos del arreglo (FOR EACH)  ",style_console)
+//Lista de series de TV trending con temporadas, viewers y reproducciones
+let seriesTrending2=[
+    {nombre:"The X Files", temporadas: 11,viewers:"500000",Reproducciones:"5557255"},
+    {nombre:"The Boys", temporadas: 4,viewers:"523000",Reproducciones:"45522545"},
+    {nombre:"Breaking Bad", temporadas: 5,viewers:"635453",Reproducciones:"4245244"},
+    {nombre:"Peaky Blinders", temporadas: 6,viewers:"45345",Reproducciones:"4524524542"},
+    {nombre:"Narcos", temporadas: 3,viewers:"45354",Reproducciones:"20545245"}
+]
+//Usando forEach para recorrer cada serie y calcular la calificacion
+seriesTrending2.forEach((serie,index)=>{
+    let calificacion=(serie.Reproducciones / serie.viewers).toFixed(2);
+    //Calcula la calificacion y redondea a 2 decimales
+    console.log(`Serie ${index +1}:`)
+    console.log(`Nombre ${serie.nombre}`)
+    console.log(`Temporadas ${serie.temporadas}`)
+    console.log(`Viewers ${serie.viewers}`)
+    console.log(`Reproducciones ${serie.Reproducciones}`)
+    console.log(`Calificacion ${calificacion}`)
+    console.log(`---------------`) //Muestra la calificacion
+})
+
+
+//console.log("%c12.-(MAP)  ",style_console)
+//lista de series que queremos verificar
+let seriesDeseadas =["The X Files","Breaking Bad","Narcos"]
+//Usando map e incñudes pR filtrar y obtener los nombres de las series con tres temporadas
+let seriesConTresTemporadas = seriesTrending2
+    .filter(serie => serie.temporadas <= 3)//Filtramos las series que tienen 3 temporadsd
+    .map(serie => serie.nombre)//Obtenemos solo los nombres de esas series
+    .filter(nombre => seriesDeseadas.includes(nombre))//Filtramos las que estan en la lista de series deseadas
+
+//Mostrar los resultados
+console.log("Series con tres temporadas que estan en la lista deseada")
+console.log(seriesConTresTemporadas);
