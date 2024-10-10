@@ -295,7 +295,7 @@ try {
 
 
 
-console.log("%c10.-  Ciclos para recorrer las propiedades de elementos finitos- (For-In",style_console)
+console.log("%c10.-  Ciclos para recorrer las propiedades de elementos finitos- (For-In)",style_console)
 //Usando for..l.in para recorrer cada serio
 for(let i in seriesTrending){
     console.log(`Serie ${parseInt(i)+1}`)
