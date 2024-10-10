@@ -166,7 +166,7 @@ catch(error){
 
 
 
-console.log("%c5.- Control de Ciclos (BREAK/CONTINUA) ",style_console)
+console.log("%c5.- Control de Ciclos (BREAK/CONTINUE) ",style_console)
 //En alugnas ocasdiones sera importamre detner un ciclo
 console.log("Va,os a constar del 1 al 10....")
 for(let num=1; num<=10; num++)
@@ -273,3 +273,23 @@ do {
     }
 } while (continuarViendo && indice < episodios.length);
 console.log("Fin de la reproduccion")
+
+//Ciclo para recorrer objetos iterables como mapas, arrays, strings, y conjuntosd de datos.
+console.log("%c9.- Ciclos para recorrer elemntos finitos- (For...Of) ",style_console)
+let seriesTrending=[
+    {nombre:"The X Files", temporadas: 11,totalViewers:"1.7M",totalReprods:"4.5M"},
+    {nombre:"The Boys", temporadas: 4,totalViewers:"2.8M",totalReprods:"3.2M"},
+    {nombre:"Breaking Bad", temporadas: 5,totalViewers:"5.7M",totalReprods:"3.5M"},
+    {nombre:"Peaky Blinders", temporadas: 6,totalViewers:"4.7M",totalReprods:"6.5M"},
+    {nombre:"Narcos", temporadas: 3,totalViewers:"2.7M",totalReprods:"5.5M"}
+]
+for(let serie of seriesTrending) {
+    console.log(`serie: ${serie.nombre},TemporADAS: ${serie.temporadas}`)
+}
+
+try {
+    console.log(`La ultima serie leida fue ${serie.nombre}`)//No funcionara, ya que la variable serie ya no exsite, ya que su alcance solo estuvo presente durante el ciclo
+} catch (error) {
+    console.log("Ocurrio un error:"+error.mensaje)
+}
+
